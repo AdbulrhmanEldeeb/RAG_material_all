@@ -110,3 +110,7 @@ test_questions.txt
 .mypy_cache/
 dmypy.json
 dmypy.log
+
+
+# other 
+mem.py

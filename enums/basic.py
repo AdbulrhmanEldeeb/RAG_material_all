@@ -7,6 +7,7 @@ class StreamlitConfig(Enum):
     LAYOUT = "wide"
     SIDEBAR_IMAGE_URL = "https://www.win-therm.com.my/wp-content/uploads/2021/02/1-1251ok-before-1024x774.jpg"
     HEADER="Chat with Heat Treatment PDFs"
+
     SIDEBAR_MARKDOWN="""
     This custom chatbot retrives data from heat treatment documents.
 
@@ -26,15 +27,22 @@ class StreamlitConfig(Enum):
     what are properties of Iron Carbide Phase?
     ```
     """
+
     INPUT_PROMPT_TITLE="Add your question here and press enter"
+
     INFO_PROCESS_DOCUMENTS="Your documents are being processed, please wait a second...⌛"
+
     INFO_READY="Vector Store DB is ready. Ask any question from your documents."
-    RETRIVING_ANSWER="Retriving answer from documents "    
+
+    RETRIVING_ANSWER="Retriving answer from documents "
 class Prompts(Enum):
     MAIN_PROMPT = """
-    Answer the questions based on the provided context. If the provided context does not include the answer, \
-    provide an answer based on your knowledge.
+    You are an assistant specialized in Material Science and Metallurgy. Answer the questions strictly based on the provided context. 
+    If the answer is not found in the provided context, supplement it with your general knowledge, ensuring relevance to Material Science and Metallurgy.
+        
+    Provided Context:
     {context}
-    <context>
-    Questions: {input}
+        
+    Questions:
+    {input}
     """
